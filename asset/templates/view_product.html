@@ -9,30 +9,10 @@
   <body>
 
     <div class="container mt-4">
-
-      {% if messages %}
-      <ul class="messages">
-          {% for message in messages %}
-      
-          <div class="alert alert-success  alert-dismissible fade show" role="alert">
-            <strong></strong> {{ message }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
-      
-      
-          {% comment %} <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li> {% endcomment %}
-          {% endfor %}
-      </ul>
-      
-      
-      
-      
-      
-      
-      {% endif %}
+      {% include "alert.html" %}
       <a href="{% url 'create_product' %}"  class="btn btn-primary mb-2">Add Product</a>
-
-
+      <a href="{% url 'create_product_with_form' %}"  class="btn btn-primary mb-2">Add Product(form)</a>
+      
       <table class="table">
         <thead>
           <tr>
@@ -62,7 +42,12 @@
               <a href={% url 'update_product' single_product.id %}  class="btn btn-primary mb-2">Edit Product</a>
             
               <a href={% url 'delete_product' single_product.id %}  class="btn btn-danger mb-2">Delete Product</a>
+              <a href={% url 'update_product_with_form' single_product.id %}  class="btn btn-success mb-2">update Product(form)</a>
+
+              
             </td>
+
+
           </tr>
 
 

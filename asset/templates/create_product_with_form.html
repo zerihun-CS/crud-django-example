@@ -1,4 +1,5 @@
 <!doctype html>
+{% load widget_tweaks %}
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -29,31 +30,33 @@
 
    <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Product name </label>
-      <input type="text" name="product_name" class="form-control" id="exampleFormControlInput1" placeholder="name">
+      {{form.product_name|add_class:"form-control"}}
     </div>
 
 
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">product_description </label>
-      <input type="text" name="product_description" class="form-control" id="exampleFormControlInput1" placeholder="name">
+      {{form.product_description|add_class:"form-control"}}
     </div>
    
 
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">product_price </label>
-      <input type="text"  name="product_price"  class="form-control" id="exampleFormControlInput1" placeholder="name">
+      {{form.product_price|add_class:"form-control"}}
     </div>
 
 
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">exp_date </label>
-      <input type="date" name="exp_date"  class="form-control" id="exampleFormControlInput1" placeholder="name">
+      {{form.exp_date|attr:"type:date"|add_class:"form-control"}}
     </div>
 
 
 
     <div class="mb-3">
-    <select class="form-select" name="product_category"  aria-label="Default select example">
+
+      {{form.product_category|add_class:"form-control"}}
+    {% comment %} <select class="form-select" name="product_category"  aria-label="Default select example">
       <option selected>ProductCategory</option>
 
       {% for single_name in  category %}
@@ -62,7 +65,7 @@
       {% endfor %}
 
     
-    </select>
+    </select> {% endcomment %}
    </div>
 
     
